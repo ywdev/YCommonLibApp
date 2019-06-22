@@ -32,6 +32,16 @@
     <!--底层背景(窗口底色)-->
     <color name="appdev_background">#f5f5f5</color>
 
+    <!--主要按钮背景及描边-->
+    <color name="appdev_btn_primary_solid_normal">#36a3f7</color>
+    <color name="appdev_btn_primary_solid_pressed">#0E7BD0</color>
+    <color name="appdev_btn_primary_solid_disabled">#7bbdf1</color>
+    <color name="appdev_btn_primary_solid_loading">#197fce</color>
+    <color name="appdev_btn_primary_stroke_normal">#36a3f7</color>
+    <color name="appdev_btn_primary_stroke_pressed">#36a3f7</color>
+    <color name="appdev_btn_primary_stroke_disabled">#36a3f7</color>
+    <color name="appdev_btn_primary_stroke_loading">#36a3f7</color>
+
     <!--默认按钮背景及描边-->
     <color name="appdev_btn_default_solid_normal">#f8f8f8</color>
     <color name="appdev_btn_default_solid_pressed">#dedede</color>
@@ -51,6 +61,25 @@
     <color name="appdev_btn_warn_stroke_pressed">#ac3130</color>
     <color name="appdev_btn_warn_stroke_disabled">#c36f6e</color>
     <color name="appdev_btn_warn_stroke_loading">#ac3130</color>
+
+    <!--主要按钮文字各状态-->
+    <color name="appdev_btn_primary_text_normal">#ffffff</color>
+    <color name="appdev_btn_primary_text_pressed">#7bbdf1</color>
+    <color name="appdev_btn_primary_text_disabled">#bdd6ea</color>
+    <color name="appdev_btn_primary_text_loading">#bdd6ea</color>
+
+    <!--默认按钮文字各状态-->
+    <color name="appdev_btn_default_text_normal">#353535</color>
+    <color name="appdev_btn_default_text_pressed">#595959</color>
+    <color name="appdev_btn_default_text_disabled">#acacac</color>
+    <color name="appdev_btn_default_text_loading">#595959</color>
+
+    <!--警告按钮文字各状态-->
+    <color name="appdev_btn_warn_text_normal">#ffffff</color>
+    <color name="appdev_btn_warn_text_pressed">#efb1b1</color>
+    <color name="appdev_btn_warn_text_disabled">#fbd1d0</color>
+    <color name="appdev_btn_warn_text_loading">#efb1b1</color>
+    <!--按钮end-->
 
 <!--____________________________主色调颜色_____________________________-->
     <!--主色调，如标题栏-->

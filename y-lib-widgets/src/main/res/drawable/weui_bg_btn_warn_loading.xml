@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle" >
+            <corners android:radius="3dp" />
+            <solid android:color="@color/appdev_btn_warn_solid_loading" />
+            <stroke android:width="2px"
+                android:color="@color/appdev_btn_warn_stroke_loading" />
+        </shape>
+    </item>
+</selector>

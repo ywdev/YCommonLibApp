@@ -14,4 +14,33 @@
         </attr>
     </declare-styleable>
 
+    <!--WEUI按钮-->
+    <declare-styleable name="WEUIButton">
+        <!--按钮文字-->
+        <attr name="text" format="string"/>
+        <!--文字大小-->
+        <attr name="textSize" format="dimension"/>
+        <!--是否加载中-->
+        <attr name="loading" format="boolean"/>
+        <!--加载文字-->
+        <attr name="loadingText" format="string"/>
+        <!--可用状态-->
+        <attr name="enabled" format="boolean"/>
+        <!--定义背景后，buttonType将失效-->
+        <!--自定义背景,正常状态-->
+        <attr name="backgroundNormal" format="reference"/>
+        <!--自定义背景,加载状态-->
+        <attr name="backgroundLoading" format="reference"/>
+        <!--自定义文字颜色，正常状态-->
+        <attr name="textNormal" format="reference"/>
+        <!--自定义文字颜色，加载状态-->
+        <attr name="textLoading" format="reference"/>
+        <!--按钮类型-->
+        <attr name="buttonType" format="enum">
+            <enum name="primary" value="1"/>
+            <enum name="default_" value="2"/>
+            <enum name="warn" value="3"/>
+        </attr>
+    </declare-styleable>
+
 </resources>
