@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CommonTitleBar">
+        <attr name="titleText" format="string"/>
+        <attr name="backImg" format="reference"/>
+        <attr name="backText" format="string"/>
+        <attr name="showBack" format="boolean"/>
+        <attr name="showDivider" format="boolean"/>
+        <attr name="immersiveStatusBar" format="boolean"/>
+        <attr name="barStyle" format="enum">
+            <enum name="centerBar" value="1"/>
+            <enum name="leftBar" value="2"/>
+        </attr>
+    </declare-styleable>
+
+</resources>

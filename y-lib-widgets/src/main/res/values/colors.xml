@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--____________________________通用颜色_____________________________-->
+    <!--无特殊说明时，应用中的白色统一使用该颜色，包括：有内容（文字、列表）的背景色、暗底色上的文字、暗底色上的内容描边等-->
+    <color name="appdev_white">#ffffff</color>
+    <!--无内容的背景色，作为底色用于体现空白及层次感-->
+    <color name="appdev_white_dark">#f6f6f9</color> <!--246,246,249-->
+    <!--半透明白色，目前用于暗底色上的按钮点击背景-->
+    <color name="appdev_white_trans">#60fcfcfc</color>
+    <!--无特殊说明时，应用中的黑色统一使用该颜色，包括：亮底色上的文字颜色-->
+    <color name="appdev_black">#565656</color>    <!--86,86,86-->
+    <!--半透明黑色，目前用于亮底色上的按钮点击背景-->
+    <color name="appdev_black_trans">#50333333</color>
+    <!--全透明-->
+    <color name="appdev_transparent">#00000000</color>
+    <!--文字正文-->
+    <color name="appdev_text_body">#333333</color>
+    <!--文字附属-->
+    <color name="appdev_text_caption">#999999</color>
+    <!--文字tag-->
+    <color name="appdev_text_tag">#888888</color>
+    <!--文字警告-->
+    <color name="appdev_text_warn">#f04443</color>
+    <!--分割线-->
+    <color name="appdev_divider">#d6d6d6</color>
+    <!--分割线深色-->
+    <color name="appdev_divider_dark">#191b1c</color>
+    <!--表层背景(控件、内容)-->
+    <color name="appdev_surface">#ffffff</color>
+    <!--表层被按下时背景-->
+    <color name="appdev_surface_pressed">#d9d9d9</color>
+    <!--底层背景(窗口底色)-->
+    <color name="appdev_background">#f5f5f5</color>
+
+    <!--默认按钮背景及描边-->
+    <color name="appdev_btn_default_solid_normal">#f8f8f8</color>
+    <color name="appdev_btn_default_solid_pressed">#dedede</color>
+    <color name="appdev_btn_default_solid_disabled">#f7f7f7</color>
+    <color name="appdev_btn_default_solid_loading">#f8f8f8</color>
+    <color name="appdev_btn_default_stroke_normal">#c6c6c6</color>
+    <color name="appdev_btn_default_stroke_pressed">#b2b2b2</color>
+    <color name="appdev_btn_default_stroke_disabled">#c6c6c6</color>
+    <color name="appdev_btn_default_stroke_loading">#b2b2b2</color>
+
+    <!--警告按钮背景及描边-->
+    <color name="appdev_btn_warn_solid_normal">#f04443</color>
+    <color name="appdev_btn_warn_solid_pressed">#d73d3c</color>
+    <color name="appdev_btn_warn_solid_disabled">#f48b8a</color>
+    <color name="appdev_btn_warn_solid_loading">#d73d3c</color>
+    <color name="appdev_btn_warn_stroke_normal">#c03636</color>
+    <color name="appdev_btn_warn_stroke_pressed">#ac3130</color>
+    <color name="appdev_btn_warn_stroke_disabled">#c36f6e</color>
+    <color name="appdev_btn_warn_stroke_loading">#ac3130</color>
+
+<!--____________________________主色调颜色_____________________________-->
+    <!--主色调，如标题栏-->
+    <color name="appdev_primary_blue">#36a3f7</color>
+    <!--主色调暗，如状态栏-->
+    <color name="appdev_primary_blue_dark">#0E7BD0</color>
+    <!--分割线标题栏-->
+    <color name="appdev_primary_blue_divider_title_bar">#4aabf7</color>
+</resources>
