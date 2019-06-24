@@ -8,6 +8,10 @@
         <attr name="showBack" format="boolean"/>
         <attr name="showDivider" format="boolean"/>
         <attr name="immersiveStatusBar" format="boolean"/>
+        <attr name="showRightBtn" format="boolean"/>
+        <attr name="rightBtnText" format="string"/>
+        <attr name="backgroundColor" format="reference"/>
+        <attr name="textAndIconColor" format="reference"/>
         <attr name="barStyle" format="enum">
             <enum name="centerBar" value="1"/>
             <enum name="leftBar" value="2"/>

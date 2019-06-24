@@ -13,11 +13,13 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.appdev.lib.utils.DisplayUtils;
 import com.appdev.lib.widgets.R;
+import com.appdev.lib.widgets.button.WEUIButton;
 import com.appdev.lib.widgets.title.adapter.CommonTitleMoreAdapter;
 import com.appdev.lib.widgets.title.listener.OnMoreActionItemClickListener;
 import com.appdev.lib.widgets.title.model.MoreAction;
@@ -30,6 +32,10 @@ public class CommonTitleBar extends RelativeLayout {
     private String mBackText;
     private boolean mShowBack;
     private boolean mShowDivider;
+    private boolean mShowRightBtn;
+    private String mRightBtnText;
+    private int mBackGroundColor;
+    private int mTextAndIconColor;
     private int mBarStyle;
     private boolean immersiveStatusBar;
 
@@ -40,6 +46,7 @@ public class CommonTitleBar extends RelativeLayout {
     private View vDividerBack;
     private TextView tvTitle;
     private RecyclerView mRecyclerView;
+    private WEUIButton wbConfirm;
 
     private CommonTitleMoreAdapter mAdapter;
 
@@ -61,6 +68,10 @@ public class CommonTitleBar extends RelativeLayout {
             mBackText = ta.getString(R.styleable.CommonTitleBar_backText);
             mShowBack = ta.getBoolean(R.styleable.CommonTitleBar_showBack,true);
             mShowDivider = ta.getBoolean(R.styleable.CommonTitleBar_showDivider,false);
+            mShowRightBtn = ta.getBoolean(R.styleable.CommonTitleBar_showRightBtn,false);
+            mRightBtnText = ta.getString(R.styleable.CommonTitleBar_rightBtnText);
+            mBackGroundColor = ta.getResourceId(R.styleable.CommonTitleBar_backgroundColor,R.color.appdev_primary_blue);
+            mTextAndIconColor = ta.getResourceId(R.styleable.CommonTitleBar_textAndIconColor,R.color.appdev_white);
             mBarStyle = ta.getInt(R.styleable.CommonTitleBar_barStyle,1);
             immersiveStatusBar = ta.getBoolean(R.styleable.CommonTitleBar_immersiveStatusBar, false);
             if(mBarStyle==1){
@@ -85,6 +96,7 @@ public class CommonTitleBar extends RelativeLayout {
         tvBack = findViewById(R.id.tv_back);
         tvTitle = findViewById(R.id.tv_title);
         mRecyclerView = findViewById(R.id.rv_recycler_view);
+        wbConfirm = findViewById(R.id.wb_btn_confirm);
     }
 
     private void afterInit() {
@@ -92,19 +104,19 @@ public class CommonTitleBar extends RelativeLayout {
         if(mBackImg!=-1){
             ivBack.setImageDrawable(getResources().getDrawable(mBackImg));
         }
-//        llTitleBack.setVisibility(mShowBack? VISIBLE:GONE);
         llTitleBack.setOnClickListener(v -> goBack());
         showBackText(mBackText);
         showDivider(mShowDivider);
         showBack(mShowBack);
+        showRightBtn(mShowRightBtn,mRightBtnText);
+        setStyleColor(mBackGroundColor,mTextAndIconColor);
         setImmersiveStatusBar(immersiveStatusBar);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(
                 getContext(), LinearLayoutManager.HORIZONTAL, true);
         mRecyclerView.setLayoutManager(linearLayoutManager);
-        mAdapter = new CommonTitleMoreAdapter(R.layout.item_title_more_action);
+        mAdapter = new CommonTitleMoreAdapter(R.layout.item_title_more_action,mTextAndIconColor,getContext());
         mRecyclerView.setAdapter(mAdapter);
     }
-
 
     /**
      * 默认返回
@@ -141,7 +153,11 @@ public class CommonTitleBar extends RelativeLayout {
         }
     }
 
-    private void showBack(boolean mShowBack) {
+    /**
+     * 显示返回按钮
+     * @param mShowBack
+     */
+    public void showBack(boolean mShowBack) {
         if(mShowBack){
             llTitleBack.setVisibility(VISIBLE);
         }else {
@@ -150,6 +166,34 @@ public class CommonTitleBar extends RelativeLayout {
             layoutParams.leftMargin = DisplayUtils.dip2px(getContext(),12);
             tvTitle.setLayoutParams(layoutParams);
         }
+    }
+
+    /**
+     * 显示右边按钮
+     * @param mShowRightBtn
+     * @param mRightBtnText
+     */
+    public void showRightBtn(boolean mShowRightBtn, CharSequence mRightBtnText) {
+        if(mShowRightBtn){
+            mRecyclerView.setVisibility(GONE);
+            wbConfirm.setVisibility(VISIBLE);
+        }else {
+            mRecyclerView.setVisibility(VISIBLE);
+            wbConfirm.setVisibility(GONE);
+        }
+        wbConfirm.setText(mRightBtnText);
+    }
+
+    /**
+     * 设置TitleBar背景色和文字色
+     * @param mBackGroundColor
+     * @param mTextAndIconColor
+     */
+    public void setStyleColor(int mBackGroundColor, int mTextAndIconColor) {
+        // 按钮背景
+        setBackground(ResourcesCompat.getDrawable(getResources(), mBackGroundColor,null));
+        tvTitle.setTextColor(ResourcesCompat.getColor(getResources(),mTextAndIconColor,null));
+        ivBack.setColorFilter(ResourcesCompat.getColor(getResources(),mTextAndIconColor,null));
     }
 
     /**
@@ -171,6 +215,14 @@ public class CommonTitleBar extends RelativeLayout {
      */
     public void setBackListener(OnClickListener listener) {
         llTitleBack.setOnClickListener(listener);
+    }
+
+    /**
+     * 设置右边按钮点击事件
+     * @param listener
+     */
+    public void setOnRightBtnClickListener(OnClickListener listener){
+        wbConfirm.setOnClickListener(listener);
     }
 
     /**

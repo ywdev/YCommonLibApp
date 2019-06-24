@@ -1,3 +1,4 @@
 include ':sample'
+include ':x-lib-gallery'
 include ':y-lib-widgets'
 include ':z-lib-utils'

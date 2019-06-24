@@ -1,6 +1,11 @@
 package com.appdev.lib.widgets.title.adapter;
 
+import android.content.Context;
+import android.media.Image;
 import android.text.TextUtils;
+import android.widget.ImageView;
+
+import androidx.core.content.res.ResourcesCompat;
 
 import com.appdev.lib.widgets.R;
 import com.appdev.lib.widgets.title.model.MoreAction;
@@ -8,9 +13,13 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
 public class CommonTitleMoreAdapter extends BaseQuickAdapter<MoreAction,BaseViewHolder> {
+    private int color;
+    private Context mContext;
 
-    public CommonTitleMoreAdapter(int layoutResId) {
+    public CommonTitleMoreAdapter(int layoutResId, int color, Context context) {
         super(layoutResId);
+        this.color = color;
+        this.mContext = context;
     }
 
     @Override
@@ -26,6 +35,13 @@ public class CommonTitleMoreAdapter extends BaseQuickAdapter<MoreAction,BaseView
             helper.setText(R.id.tv_more,item.getName());
         }else {
             helper.setGone(R.id.tv_more,false);
+        }
+        if(item.getColor()!=-1){
+            ((ImageView)helper.getView(R.id.iv_more)).setColorFilter(
+                    ResourcesCompat.getColor(mContext.getResources(),item.getColor(),null));
+        }else {
+            ((ImageView)helper.getView(R.id.iv_more)).setColorFilter(
+                    ResourcesCompat.getColor(mContext.getResources(),color,null));
         }
     }
 }

@@ -4,4 +4,8 @@ ext{
     junitVersion = '4.12'
     runnerVersion = '1.2.0'
     espressoCoreVersion = '3.2.0'
+
+    compileSdkVersion = 29
+    minSdkVersion = 16
+    targetSdkVersion = 29
 }

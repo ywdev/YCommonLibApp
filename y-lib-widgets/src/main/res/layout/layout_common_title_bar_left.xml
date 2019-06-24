@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="false"
-    android:orientation="vertical"
-    android:background="@color/appdev_primary_blue">
+    android:orientation="vertical">
     <View
         android:id="@+id/v_place_holder"
         android:layout_width="match_parent"
@@ -59,13 +59,32 @@
             android:textSize="18sp"
             android:textColor="@color/appdev_white"
             tools:text="标题"/>
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_recycler_view"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:visibility="visible"
             android:scrollbars="none"
             android:overScrollMode="never"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
+        <com.appdev.lib.widgets.button.WEUIButton
+            android:id="@+id/wb_btn_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="12dp"
+            android:visibility="gone"
+            app:backgroundNormal="@drawable/weui_bg_btn_green_normal"
+            app:textNormal="@drawable/weui_bg_btn_green_text_normal"
+            app:buttonType="primary"
+            app:textSize="16sp"
+            app:text="确定"
+            tools:visibility="visible"/>
     </RelativeLayout>
 </LinearLayout>

@@ -6,11 +6,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
     <com.appdev.lib.widgets.title.CommonTitleBar
+        android:id="@+id/titleBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:titleText="你好"
+        app:showRightBtn="true"
+        app:rightBtnText="确定"
         />
 
     <com.appdev.lib.widgets.button.WEUIButton
@@ -43,5 +45,17 @@
         app:textNormal="@drawable/bg_btn_custom_text_normal"
         app:textLoading="@drawable/bg_btn_custom_text_loading"
         app:buttonType="primary"
+        app:text="自定义样式"/>
+
+    <com.appdev.lib.widgets.button.WEUIButton
+        android:id="@+id/btn_weui"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:backgroundNormal="@drawable/weui_bg_btn_green_normal"
+        app:textNormal="@drawable/weui_bg_btn_green_text_normal"
+        app:buttonType="primary"
+        app:enabled="false"
         app:text="自定义样式"/>
 </androidx.appcompat.widget.LinearLayoutCompat>
