@@ -14,48 +14,10 @@
         app:showRightBtn="true"
         app:rightBtnText="确定"
         />
-
-    <com.appdev.lib.widgets.button.WEUIButton
-        android:id="@+id/btn_primary_disabled"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btn_gallery"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:buttonType="warn"
-        app:text="主操作按钮"
-        app:loading="true"/>
-
-    <com.appdev.lib.widgets.button.WEUIButton
-        android:layout_width="56dp"
-        android:layout_height="28dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:buttonType="primary"
-        app:textSize="14sp"
-        app:text="按钮"/>
-    <com.appdev.lib.widgets.button.WEUIButton
-        android:id="@+id/btn_customize"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:backgroundNormal="@drawable/bg_btn_custom_normal"
-        app:backgroundLoading="@drawable/bg_btn_custom_loading"
-        app:textNormal="@drawable/bg_btn_custom_text_normal"
-        app:textLoading="@drawable/bg_btn_custom_text_loading"
-        app:buttonType="primary"
-        app:text="自定义样式"/>
-
-    <com.appdev.lib.widgets.button.WEUIButton
-        android:id="@+id/btn_weui"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:backgroundNormal="@drawable/weui_bg_btn_green_normal"
-        app:textNormal="@drawable/weui_bg_btn_green_text_normal"
-        app:buttonType="primary"
-        app:enabled="false"
-        app:text="自定义样式"/>
+        android:text="相册"
+        />
 </androidx.appcompat.widget.LinearLayoutCompat>
